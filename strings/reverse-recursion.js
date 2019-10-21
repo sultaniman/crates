@@ -1,9 +1,11 @@
-export const reverse = (str, acc) => {
+const reversed = (str, acc) => {
   if (str.length === 0) {
       return acc
   }
 
-  return reverse(str.slice(0, str.length - 1), acc + str[str.length - 1])
+  return reversed(str.slice(0, str.length - 1), acc + str[str.length - 1])
 }
+
+export const reverse = (str) => reversed(str, "")
 
 export default reverse
